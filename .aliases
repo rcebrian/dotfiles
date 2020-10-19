@@ -1,0 +1,69 @@
+#     █████╗ ██╗     ██╗ █████╗ ███████╗███████╗███████╗
+#    ██╔══██╗██║     ██║██╔══██╗██╔════╝██╔════╝██╔════╝
+#    ███████║██║     ██║███████║███████╗█████╗  ███████╗
+#    ██╔══██║██║     ██║██╔══██║╚════██║██╔══╝  ╚════██║
+# ██╗██║  ██║███████╗██║██║  ██║███████║███████╗███████║
+# ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
+
+########################
+#        EXPORTS       #
+########################
+export GIT_EDITOR=vim
+
+########################
+#        ALIASES       #
+########################
+# fast configs
+alias vimconfig='vim $HOME/.vimrc'
+alias bashconfig='vim $HOME/.bashrc'
+alias zshconfig='vim $HOME/.zshrc'
+alias aliasconfig='vim $HOME/.aliases'
+
+# utilities
+alias open='xdg-open'
+
+# dev
+alias dev='cd $HOME/Development'
+
+# rename
+alias mkdir='mkdir -pv'
+
+# default
+alias ll='ls -lF'
+alias lla='ls -lAF'
+alias la='ls -A'
+alias l1='ls -1'
+alias l='ls -CF'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias dir='dir --color=auto'
+  alias vdir='vdir --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
+
+
+########################
+#      FUNCTIONS       #
+########################
+# update
+function update() {
+  sudo apt update
+  sudo apt upgrade
+  sudo apt dist-upgrade
+  sudo apt autoremove
+}
+
+# take
+function take() {
+  mkdir $1
+  cd $1
+}
+
+# PATHS
+export PATH=$PATH:$HOME/.local/bin
