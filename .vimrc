@@ -14,7 +14,7 @@ endif
 
 " colors
 syntax on
-" colorscheme jellybeans
+colorscheme jellybeans
 
 " ui
 set number
@@ -45,12 +45,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "" lightline.vim
-" let g:lightline = {'colorscheme': 'jellybeans',}
+let g:lightline = {'colorscheme': 'jellybeans',}
 
 "" rainbow
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 
 "" tabnine
-set rtp+=~/.vim/bundle/tabnine-vim
+set rtp+=$HOME/.vim/bundle/tabnine-vim
 
