@@ -8,19 +8,18 @@
 ### PATHS
 export PATH=$PATH:$HOME/.local/bin
 
-########################
-#        EXPORTS       #
-########################
-export GIT_EDITOR=vim
 
-########################
-#        ALIASES       #
-########################
+### VARIABLES
+export CLI_EDITOR=vim
+export GIT_EDITOR=$CLI_EDITOR
+
+
+### ALIASES
 # fast configs
-alias vimconfig='vim $HOME/.vimrc'
-alias bashconfig='vim $HOME/.bashrc'
-alias zshconfig='vim $HOME/.zshrc'
-alias aliasconfig='vim $HOME/.aliases'
+alias vimconfig='$CLI_EDITOR $HOME/.vimrc'
+alias bashconfig='$CLI_EDITOR $HOME/.bashrc'
+alias zshconfig='$CLI_EDITOR $HOME/.zshrc'
+alias aliasconfig='$CLI_EDITOR $HOME/.aliases'
 
 # utilities
 alias open='xdg-open'
@@ -28,7 +27,7 @@ alias open='xdg-open'
 # dev
 alias dev='cd $HOME/Development'
 
-# rename
+# overwrite
 alias mkdir='mkdir -pv'
 
 # default
@@ -37,8 +36,11 @@ alias lla='ls -lAF'
 alias la='ls -A'
 alias l1='ls -1'
 alias l='ls -CF'
+
+
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
@@ -49,10 +51,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-
-########################
-#      FUNCTIONS       #
-########################
+### FUNCTIONS
 # update
 function update() {
   sudo apt update
@@ -67,5 +66,3 @@ function take() {
   cd $1
 }
 
-# PATHS
-export PATH=$PATH:$HOME/.local/bin

@@ -14,7 +14,7 @@ endif
 
 " colors
 syntax on
-colorscheme afterglow
+" colorscheme afterglow
 
 " ui
 set number
