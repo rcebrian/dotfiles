@@ -1,0 +1,60 @@
+#    _   _    ___   _   ___ ___ ___ 
+#   /_\ | |  |_ _| /_\ / __| __/ __|
+#  / _ \| |__ | | / _ \\__ \ _|\__ \
+# /_/ \_\____|___/_/ \_\___/___|___/
+#
+
+# fast configs
+alias vimconfig='$CLI_EDITOR $HOME/.vimrc'
+alias bashconfig='$CLI_EDITOR $HOME/.bashrc'
+alias zshconfig='$CLI_EDITOR $HOME/.zshrc'
+alias aliasconfig='$CLI_EDITOR $DOTFILES_HOME/aliases'
+alias envconfig='$CLI_EDITOR $DOTFILES_HOME/environment'
+
+# utilities
+alias open='xdg-open'
+alias gk='gitkraken'
+
+# dev
+alias dev='cd $DEVELOPMENT'
+
+# overwrite
+alias mkdir='mkdir -pv'
+
+# default
+alias ll='ls -lF'
+alias lla='ls -lAF'
+alias la='ls -A'
+alias l1='ls -1'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+### FUNCTIONS
+# update
+function update() {
+  sudo apt update
+  sudo apt upgrade
+  sudo apt dist-upgrade
+  sudo apt autoremove
+}
+
+# take
+function take() {
+  mkdir $1
+  cd $1
+}

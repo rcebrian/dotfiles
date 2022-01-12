@@ -1,3 +1,9 @@
+#     _______ _  _ ___  ___ 
+#    |_  / __| || | _ \/ __|
+#   _ / /\__ \ __ |   / (__ 
+#  (_)___|___/_||_|_|_\\___|
+# 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -57,11 +63,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-# aliases
-if [ -f $HOME/.aliases ]; then
-    . $HOME/.aliases
-fi
+# Aliases and env variables.
+. $HOME/.config/dotfiles/environment
+. $HOME/.config/dotfiles/aliases
 
 # unsent history
 unsetopt share_history
