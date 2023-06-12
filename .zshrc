@@ -83,5 +83,5 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 # Aliases and env variables.
-. $HOME/.config/dotfiles/environment
-. $HOME/.config/dotfiles/aliases
+. $HOME/.environment
+. $HOME/.aliases
