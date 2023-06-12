@@ -93,5 +93,5 @@ if ! shopt -oq posix; then
 fi
 
 # Aliases and env variables.
-. $HOME/.config/dotfiles/environment
-. $HOME/.config/dotfiles/aliases
+. $HOME/.config/environment
+. $HOME/.config/aliases

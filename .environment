@@ -4,20 +4,16 @@
 # |___|_|\_| \_/ |___|_|_\\___/|_|\_|_|  |_|___|_|\_| |_|  
 #
 
-
 CLI_EDITOR='vim'
 GIT_EDITOR=$CLI_EDITOR
 
 # user env
-DOTFILES_HOME=$HOME/.config/dotfiles
-DEVELOPMENT=$HOME/Development
-
 
 # bin
 LOCAL_BIN=$HOME/.local/bin
 export PATH=$PATH:$LOCAL_BIN
 
-# go
-GOROOT='/opt/go/latest'
+# golang
+GOROOT=/usr/local/go
 GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

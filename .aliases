@@ -8,18 +8,9 @@
 alias vimconfig='$CLI_EDITOR $HOME/.vimrc'
 alias bashconfig='$CLI_EDITOR $HOME/.bashrc'
 alias zshconfig='$CLI_EDITOR $HOME/.zshrc'
-alias aliasconfig='$CLI_EDITOR $DOTFILES_HOME/aliases'
-alias envconfig='$CLI_EDITOR $DOTFILES_HOME/environment'
+alias aliasconfig='$CLI_EDITOR $HOME/.aliases'
 
 # utilities
-alias open='xdg-open'
-alias gk='gitkraken'
-
-# dev
-alias dev='cd $DEVELOPMENT'
-
-# overwrite
-alias mkdir='mkdir -pv'
 
 # default
 alias ll='ls -lF'
@@ -45,14 +36,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 ### FUNCTIONS
-# update
-function update() {
-  sudo apt update
-  sudo apt upgrade
-  sudo apt dist-upgrade
-  sudo apt autoremove
-}
-
 # take
 function take() {
   mkdir $1
